@@ -13,7 +13,8 @@ function gssen:settings
 scoreboard objectives add gssen_var dummy
 scoreboard objectives add gssen_const dummy
 
-#dirty (does not clear values after use)
+#dirty (scores that may not be cleared)
+scoreboard objectives add gssen_dirty dummy
 scoreboard objectives add gssen_return dummy
 
 scoreboard players set *max gssen_const 2147483647

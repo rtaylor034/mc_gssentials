@@ -3,8 +3,9 @@
 # - gssen:impl/inline/repeat/init
 #--------------------
 
-$execute store result storage $(with).$(iter_var) int 1 run scoreboard players get $(iter_declare)
-$execute store result score *repeat.returned gssen_var run function $(function) with storage $(with)
+$data modify storage gssen:var repeat.this_scope set from storage gssen:var repeat.scope.$(scope)
+execute if data storage gssen:var repeat.this_scope.with.null run function gssen:impl/inline/repeat/no_with with storage gssen:var repeat.this_scope
+execute unless data storage gssen:var repeat.this_scope.with.null run function gssen:impl/inline/repeat/with with storage gssen:var repeat.this_scope
 
-$scoreboard players add $(iter_declare) 1
-$execute unless score *repeat.returned gssen_var matches 0 unless score $(iter_declare) matches $(n).. run function gssen:impl/inline/repeat/command {function:"$(function)", n:$(n), iter_declare:"$(iter_declare)", with:"$(with)", iter_var:"$(iter_var)"}
+$scoreboard players add *repeat.iter.$(scope) gssen_var 1
+$execute unless score *repeat.returned gssen_var matches 0 unless score *repeat.iter.$(scope) gssen_var matches $(n).. run function gssen:impl/inline/repeat/command with storage gssen:var repeat.scope.$(scope)

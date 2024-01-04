@@ -2,8 +2,7 @@
 #--------------------
 # -> function: string (function name)
 # -> n: int
-# -> iter_declare: string (scoreboard identifier)
-# => with: string (storage identifier) = "null"
+# ~> with: string (storage identifier)
 # => iter_var: string = "i"
 #--------------------
 # ...
@@ -12,8 +11,7 @@
 #> if <function> returns 0 at a given repitition, the loop will stop early.
 #--------------------
 #- can be used to iterate through an array.
-#- due to minecraft's non-existent scoping rules, <iter_declare> must indicate a free scoreboard player/objective that can be used to store the iteration variable.
-#  - example: "dothing.i gssen_var"
+#- introduces a notable amount of O(1) macro overhead, but its convenient
 #- example <with>: "gssen:var mypath"
 #--------------------
 # 0.. - number of successful repititions. equal to <n> if all calls to <function> resulted in non-zero values.
@@ -21,12 +19,16 @@
 
 $data modify storage gssen:in repeat set value $(in)
 execute unless data storage gssen:in repeat.iter_var run data modify storage gssen:in repeat.iter_var set value "i"
-execute unless data storage gssen:in repeat.with run data modify storage gssen:in repeat.with set value "null"
+execute unless data storage gssen:in repeat.with run data modify storage gssen:in repeat.with set value {null:1}
+
+scoreboard players add *repeat.nest_level gssen_var 1
+execute store result storage gssen:in repeat.scope int 1 run scoreboard players get *repeat.nest_level gssen_var
 
 execute store result score *repeat gssen_return run data get storage gssen:in repeat.n
 execute if score *repeat gssen_return matches 1.. run function gssen:impl/inline/repeat/init with storage gssen:in repeat
 
+scoreboard players remove *repeat.nest_level gssen_var 1
 #RESET
-scoreboard players reset *repeat.returned gssen_var
+execute if score *repeat.nest_level gssen_var matches ..0 run function gssen:impl/inline/repeat/reset
 
 return run scoreboard players get *repeat gssen_return

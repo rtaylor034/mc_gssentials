@@ -3,14 +3,13 @@
 # - gssen:api/inline/repeat
 #--------------------
 
-#data remove storage gssen:in repeat
-data remove storage gssen:var repeat
+$data modify storage gssen:var repeat.scope.$(scope) set from storage gssen:in repeat
+data remove storage gssen:in repeat
 
-$scoreboard players set $(iter_declare) 0
-#chuegy but to its to ensure no contamination in nested loops
-$function gssen:impl/inline/repeat/command {function:"$(function)", n:$(n), iter_declare:"$(iter_declare)", with:"$(with)", iter_var:"$(iter_var)"}
+$scoreboard players set *repeat.iter.$(scope) gssen_var 0
+$function gssen:impl/inline/repeat/command with storage gssen:var repeat.scope.$(scope)
 
-$scoreboard players operation *repeat gssen_return = $(iter_declare)
+$scoreboard players operation *repeat gssen_return = *repeat.iter.$(scope) gssen_var
 scoreboard players operation *repeat gssen_return -= *1 gssen_const
 
-$scoreboard players reset $(iter_declare)
+$scoreboard players reset *repeat.iter.$(scope) gssen_var
