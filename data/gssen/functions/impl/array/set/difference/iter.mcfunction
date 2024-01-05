@@ -1,6 +1,6 @@
-#> gssen:impl/array/difference/iter
+#> gssen:impl/array/set/difference/iter
 #--------------------
-# - gssen:api/array/difference
+# - gssen:api/array/set/difference
 #--------------------
 
 $data modify storage gssen:var difference.iter.a_item set from storage gssen:in difference.a[$(i)]
