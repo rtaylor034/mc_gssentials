@@ -11,8 +11,9 @@
 #> if <function> returns 0 at a given repitition, the loop will stop early.
 #--------------------
 #- can be used to iterate through an array.
-#- introduces a notable amount of O(1) macro overhead, but its convenient
-#- example <with>: "gssen:var mypath"
+#- introduces a notable amount of O(1) macro overhead, but its convenient.
+#- example <with>: "gssen:var mypath".
+#- <with> is not cached; you can update and read it every subsequent loop.
 #--------------------
 # 0.. - number of successful repititions. equal to <n> if all calls to <function> resulted in non-zero values.
 #--------------------
