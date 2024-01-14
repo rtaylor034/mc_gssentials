@@ -18,7 +18,8 @@
 #--------------------
 
 $data modify storage gssen:in intersection set value $(in)
-data modify storage gssen:out intersection.result set value []
+data modify storage gssen:out intersection.shared_a set value []
+data modify storage gssen:out intersection.shared_b set value []
 scoreboard players set *intersection gssen_return 0
 
 execute store result storage gssen:in repeat.in.n int 1 if data storage gssen:in intersection.a[]
@@ -30,5 +31,5 @@ data remove storage gssen:in intersection
 data remove storage gssen:var intersection
 scoreboard players reset *intersection.match gsen_var
 
-execute if data storage gssen:out intersection.result[] run scoreboard players set *intersection gssen_return 1
+execute if data storage gssen:out intersection.shared_a[] run scoreboard players set *intersection gssen_return 1
 return run scoreboard players get *intersection gssen_return
