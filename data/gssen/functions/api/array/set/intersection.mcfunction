@@ -4,11 +4,13 @@
 # -> b: obj[]
 # => compare: {only: string[]} | {without: string[]} | {} = {}
 #--------------------
-# <- result: obj[]
+# <- shared_a: obj[]
+# <- shared_b: obj[]
 #--------------------
-#> gets all objects that are shared between <a> and <b>
+#> gets all objects from <a> and <b> that share the same values for tags specified in <compare>.
 #--------------------
 #- if <compare>: compares only or without specified tags for each object. (See gssen:api/object/partial)
+#- #> if <compare> is unspecified ({}), >shared_a< and >shared_b< are identical.
 #- if the size of <a> and <b> are known, set <a> to the smaller of the two for maximum performance.
 #--------------------
 # 0 - <a> and <b> have no elements in common.

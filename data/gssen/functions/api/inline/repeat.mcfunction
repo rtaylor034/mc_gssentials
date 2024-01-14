@@ -7,13 +7,14 @@
 #--------------------
 # ...
 #--------------------
-#> calls <function> <n> times with specified macro values <with>, setting '<with>.<iter_var>' to the current iteration.
+#> calls <function> <n> times with specified macro values <with>, setting '<with>.<iter_var>' to the current iteration (starting at 0).
 #> if <function> returns 0 at a given repitition, the loop will stop early.
 #--------------------
 #- can be used to iterate through an array.
 #- introduces a notable amount of O(1) macro overhead, but its convenient.
 #- example <with>: "gssen:var mypath".
 #- <with> is not cached; you can update and read it every subsequent loop.
+#- <iter_var> goes through the range 0..(<n>-1)
 #--------------------
 # 0.. - number of successful repititions. equal to <n> if all calls to <function> resulted in non-zero values.
 #--------------------
