@@ -9,6 +9,9 @@ data modify storage gssen:in partial.in.object set from storage gssen:var differ
 data modify storage gssen:in partial.in.get set from storage gssen:in compare
 function gssen:api/object/partial with storage gssen:in partial
 
+execute store result score *difference.tags gssen_var run data get storage gssen:out partial.result
+execute if score *difference.tags gssen_var matches 0 run return 1
+
 # '1' if <a_item> is contained in <b>
 execute store result score *difference.match gssen_var run function gssen:impl/array/set/difference/compare with storage gssen:out partial
 

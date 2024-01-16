@@ -31,7 +31,8 @@ data modify storage gssen:out difference.unique_b set from storage gssen:in diff
 
 data remove storage gssen:in difference
 data remove storage gssen:var difference
-scoreboard players reset *difference.match gsen_var
+scoreboard players reset *difference.match gssen_var
+scoreboard players reset *difference.tags gssen_var
 
 execute if data storage gssen:out difference.unique_a[] run scoreboard players set *difference gssen_return 1
 execute if data storage gssen:out difference.unique_b[] run scoreboard players set *difference gssen_return 1
