@@ -6,7 +6,7 @@
 $data modify storage gssen:var intersection.iter.a_item set from storage gssen:in intersection.a[$(i)]
 
 data modify storage gssen:in partial.in.object set from storage gssen:var intersection.iter.a_item
-data modify storage gssen:in partial.in.get set from storage gssen:in compare
+data modify storage gssen:in partial.in.get set from storage gssen:in intersection.compare
 function gssen:api/object/partial with storage gssen:in partial
 
 # '1' if <a_item> is contained in <b>
