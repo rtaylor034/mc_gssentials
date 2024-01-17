@@ -10,6 +10,8 @@ $scoreboard players set *repeat.iter.$(scope) gssen_var 0
 $function gssen:impl/inline/repeat/command with storage gssen:var repeat.scope.$(scope)
 
 $scoreboard players operation *repeat gssen_return = *repeat.iter.$(scope) gssen_var
-scoreboard players operation *repeat gssen_return -= *1 gssen_const
+
+#-- Not sure why this was here
+#scoreboard players remove *repeat gssen_return 1
 
 $scoreboard players reset *repeat.iter.$(scope) gssen_var
