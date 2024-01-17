@@ -14,8 +14,7 @@
 #- if <compare> is unspecified, >result< and >compared< are identical.
 #- an element must match ALL tags of another element to be considered a duplicate.
 #--------------------
-# 1 - <array> did not contain duplicates.
-# 0 - <array> contained duplicates.
+# ...
 #--------------------
 
 $data modify storage gssen:in ensure set value $(in)
@@ -27,3 +26,4 @@ data modify storage gssen:var ensure.partial.in.get set from storage gssen:in en
 execute if data storage amenu:in ensure.array[] run function gssen:impl/array/set/ensure/iter
 data remove storage gssen:in ensure
 data remove storage gssen:var ensure
+scoreboard players reset *ensure.tags gssen_var
