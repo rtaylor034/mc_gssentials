@@ -12,3 +12,8 @@ a pack should have 3 top-level function folders:
 
 # API structure
 
+
+# API FUNCTION GUIDELINES
+positive values SHOULD reflect some sort of success.
+0 or negative values MUST reflect some sort of failure.
+a function is RECOMMENDED to to express failure as non-zero negative return values OR exclusively returning 0.
