@@ -1,0 +1,16 @@
+> #gssen:events > on_example
+--------------------
+ * when this event is triggered/called
+   - can gramatically assume the word "triggers" before each entry
+ * another trigger
+--------------------
+ -> immutable_info: int
+--------------------
+ <-> mutable_passed_variable: string
+--------------------
+ - description and notes about passed inputs.
+ - immutable inputs such as <immutable_input> are provided as a single object via macro variable '$(event_info)'
+ - mutable pass variables such as >mutable_passed_variable< would be provided under the storage data 'gssen:event/pass on_example.mutable_passed_variable'
+--------------------
+ ~ pdata:internal/playerdata/onjoin
+--------------------
