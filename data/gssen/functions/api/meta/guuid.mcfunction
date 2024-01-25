@@ -1,4 +1,4 @@
-#> gssen:api > inline/guuid
+#> gssen:api > meta/guuid
 #--------------------
 # -> UUID: uuid
 #--------------------
@@ -48,8 +48,8 @@ execute store result score *guuid.3 gssen_var run scoreboard players operation *
 execute store result storage gssen:var guuid.e int 1 run scoreboard players operation *guuid.2 gssen_var %= *256 gssen_const
 execute store result storage gssen:var guuid.f int 1 run scoreboard players operation *guuid.3 gssen_var /= *256 gssen_const
 
-function gssen:impl/inline/guuid/get_hexes with storage gssen:var guuid
-function gssen:impl/inline/guuid/concat_uuid with storage gssen:var guuid
+function gssen:impl/meta/guuid/get_hexes with storage gssen:var guuid
+function gssen:impl/meta/guuid/concat_uuid with storage gssen:var guuid
 
 scoreboard players reset *guuid.0 gssen_var
 scoreboard players reset *guuid.1 gssen_var
