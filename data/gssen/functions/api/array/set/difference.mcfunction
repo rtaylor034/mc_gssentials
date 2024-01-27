@@ -12,7 +12,7 @@
 #- if <compare>: compares only or without specified tags for each object. (See gssen:api/object/partial)
 #- if the size of <a> and <b> are known, set <a> to the smaller of the two for maximum performance.
 #--------------------
-# 0 - <a> and <b> are exactly the same.
+# 0 - <a> and <b> have no differences.
 # 1 - <a> and <b> have at least 1 difference.
 #--------------------
 
