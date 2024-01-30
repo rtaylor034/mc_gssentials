@@ -30,6 +30,7 @@ execute store result score *repeat gssen_return run data get storage gssen:in re
 execute if score *repeat gssen_return matches 1.. run function gssen:impl/inline/repeat/init with storage gssen:in repeat
 
 scoreboard players remove *repeat.nest_level gssen_var 1
+data remove storage gssen:var repeat.scopes[-1]
 #RESET
 execute if score *repeat.nest_level gssen_var matches ..0 run function gssen:impl/inline/repeat/reset
 
