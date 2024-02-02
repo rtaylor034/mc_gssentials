@@ -12,12 +12,9 @@
 #--------------------
 
 $data modify storage gssen:in rot2space set value $(in)
-
-#init
 data modify storage gssen:out rot2space.result set value [0.0d,0.0d,0.0d]
 execute unless data storage gssen:in rot2space.magnitude run data modify storage gssen:in rot2space.magnitude set value 1
 
 execute positioned 0 0 0 align xyz summon marker run function gssen:impl/vector/rot2space/tp with storage gssen:in rot2space
 
-#RESET
 data remove storage gssen:in rot2space
