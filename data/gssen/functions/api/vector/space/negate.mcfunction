@@ -11,6 +11,7 @@
 # ...
 #--------------------
 
+data remove storage gssen:in negate
 $data modify storage gssen:in _negate set value $(in)
 data modify storage gssen:var _negate.out.vector set value [0d, 0d, 0d]
 
