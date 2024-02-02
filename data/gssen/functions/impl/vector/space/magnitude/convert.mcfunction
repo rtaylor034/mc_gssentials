@@ -11,4 +11,4 @@ data modify storage gssen:var magnitude.vec.x set from storage gssen:in magnitud
 data modify storage gssen:var magnitude.vec.y set from storage gssen:in magnitude.space[1]
 data modify storage gssen:var magnitude.vec.z set from storage gssen:in magnitude.space[2]
 
-execute summon item_display run function gssen:impl/vector/magnitude/transform with storage gssen:var magnitude.vec
+execute summon item_display run function gssen:impl/vector/space/magnitude/transform with storage gssen:var magnitude.vec

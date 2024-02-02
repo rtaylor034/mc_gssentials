@@ -1,18 +1,18 @@
-#> gssen : api/vector > magnitude
+#> gssen:api > vector/space/magnitude
 #--------------------
-# -> space : double[3] (space vector)
+# -> vector : double[3] (space vector)
 #--------------------
 # <- result : float
 #--------------------
-#> gets the magnitude of a <space> vector
+#> gets the magnitude of a <vector>.
 #--------------------
-#- in otherwords, gets the distance between <space> and (0, 0, 0) 
+#- in otherwords, gets the distance between <vector> and (0, 0, 0) 
 #--------------------
 #~ implementation from "Triton365" on the Mincecraft Command Discord
 
 $data modify storage gssen:in magnitude set value $(in)
 
-function gssen:impl/vector/magnitude/convert with storage gssen:in magnitude
+function gssen:impl/vector/space/magnitude/convert with storage gssen:in magnitude
 
 #RESET
 data remove storage gssen:in magnitude
