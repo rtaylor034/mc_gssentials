@@ -6,6 +6,7 @@
 #--------------------
 #> gets the rotation vector that faces in the direction of a space <vector>.
 #--------------------
+#- builtin precision.
 #- >result[0]< = -arctan(<vector[0]> / <vector[2]>)
 #- >result[1]< = -arctan(<vector[1]> / sqrt(<vector[0]>^2 + <vector[2]>^2)]
 #- inverse of gssen:api/vector/rotation/to_space

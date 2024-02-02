@@ -4,9 +4,9 @@
 #--------------------
 # <- result: double[3]
 #--------------------
-#> multiplies all values of <vector> by -1, keeping exact precision.
+#> multiplies all values of <vector> by -1.
 #--------------------
-# ...
+#- builtin precision.
 #--------------------
 # ...
 #--------------------

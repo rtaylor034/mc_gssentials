@@ -1,20 +1,25 @@
-#> gssen:api > vector/rot2space
+#> gssen:api > vector/rotation/to_space
 #--------------------
-# -> rotation : float[2] (rotation vector)
+# -> vector : float[2] (rotation vector)
 # => magnitude : double = 1
 #--------------------
 # <- result : double[3] (space vector)
 #--------------------
-#> generates a space vector with magnitude <magnitude> in the direction of <rotation>
+#> generates a space vector with magnitude <magnitude> in the direction of a rotation <vector>.
 #--------------------
-#- >result< = [-sin(<rotation[0]>), -sin(<rotation[1]), cos(<rotation[0]>)] * <magnitude>
-#- inverse of space2rot
+#- builtin precision.
+#- >result< = [-sin(<rotation[0]>), -sin(<rotation[1]), cos(<rotation[0]>)] * <magnitude>.
+#- inverse of gssen:api/vector/space/to_rotation.
 #--------------------
 
-$data modify storage gssen:in rot2space set value $(in)
-data modify storage gssen:out rot2space.result set value [0.0d,0.0d,0.0d]
-execute unless data storage gssen:in rot2space.magnitude run data modify storage gssen:in rot2space.magnitude set value 1
+$data modify storage gssen:in to_space set value $(in)
+execute unless data storage gssen:in to_space.magnitude run data modify storage gssen:in to_space.magnitude set value 1
 
-execute positioned 0 0 0 align xyz summon marker run function gssen:impl/vector/rot2space/tp with storage gssen:in rot2space
+data modify storage gssen:var to_space.xrot set from storage gssen:in to_space.vector[0]
+data modify storage gssen:var to_space.yrot set from storage gssen:in to_space.vector[1]
+data modify storage gssen:var to_space.magnitude set from storage gssen:in to_space.magnitude
 
-data remove storage gssen:in rot2space
+execute positioned 0 0 0 align xyz summon marker run function gssen:impl/vector/rotation/to_space/do with storage gssen:var to_space
+
+data remove storage gssen:in to_space
+data remove storage gssen:var to_space
