@@ -11,6 +11,8 @@
 #- >result< = [-sin(<rotation[0]>), -sin(<rotation[1]), cos(<rotation[0]>)] * <magnitude>.
 #- inverse of gssen:api/vector/space/to_rotation.
 #--------------------
+# ...
+#--------------------
 
 $data modify storage gssen:in to_space set value $(in)
 execute unless data storage gssen:in to_space.magnitude run data modify storage gssen:in to_space.magnitude set value 1

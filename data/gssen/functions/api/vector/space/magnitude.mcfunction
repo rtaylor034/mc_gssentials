@@ -8,6 +8,8 @@
 #--------------------
 #- in otherwords, gets the distance between <vector> and (0, 0, 0) 
 #--------------------
+# ...
+#--------------------
 #~ implementation from "Triton365" on the Mincecraft Command Discord
 
 $data modify storage gssen:in magnitude set value $(in)

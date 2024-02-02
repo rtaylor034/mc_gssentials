@@ -11,6 +11,8 @@
 #- >result[1]< = -arctan(<vector[1]> / sqrt(<vector[0]>^2 + <vector[2]>^2)]
 #- inverse of gssen:api/vector/rotation/to_space
 #--------------------
+# ...
+#--------------------
 
 $data modify storage gssen:in to_rotation set value $(in)
 
