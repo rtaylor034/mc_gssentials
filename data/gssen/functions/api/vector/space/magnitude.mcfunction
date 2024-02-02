@@ -12,7 +12,7 @@
 
 $data modify storage gssen:in magnitude set value $(in)
 
-function gssen:impl/vector/space/magnitude/convert with storage gssen:in magnitude
+function gssen:impl/vector/space/magnitude/convert
 
 #RESET
 data remove storage gssen:in magnitude
