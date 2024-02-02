@@ -4,9 +4,9 @@
 #--------------------
 # <- result: UUID
 #--------------------
-#> generates a UUID
+#> generates a UUID.
 #--------------------
-# ...
+#- literally just summons a marker and grabs its UUID.
 #--------------------
 # ...
 #--------------------

@@ -1,4 +1,4 @@
-#> gssen:api > vector/negate
+#> gssen:api > vector/space/negate
 #--------------------
 # -> vector: double[3]
 #--------------------
@@ -22,6 +22,8 @@ execute store result score *negate.yrot gssen_var run data get storage gssen:var
 scoreboard players operation *negate.yrot gssen_var *= *-1 gssen_const
 execute store result storage gssen:var negate.marker.yrot float 0.00001 run scoreboard players get *negate.yrot gssen_var
 data modify storage gssen:var negate.marker.xrot set from storage gssen:out space2rot.result[0]
+
+execute positioned 0 0 0 align xyz summon marker run function gssen:impl/vector/space/negate/do
 
 scoreboard players reset *negate.yrot gssen_var
 data remove storage gssen:var negate
