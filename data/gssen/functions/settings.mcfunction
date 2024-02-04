@@ -1,7 +1,6 @@
 #>gssen:settings
 
 #declare storage gssen:settings
-#settings stored in gssen:settings <path>
 
 #> DEV - MAKE THIS DEFAULT TO DEPEND PLAYERS LOCATION FOR GARUNTEED SPAWN CHUNK
 #>-------------------
