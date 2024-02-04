@@ -3,7 +3,7 @@
     "values": [
       "area_effect_cloud",
       "armor_stand",
-      "arrow",
+      "#arrows",
       "block_display",
       "boat",
       "chest_boat",
