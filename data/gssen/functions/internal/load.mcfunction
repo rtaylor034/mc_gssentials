@@ -4,7 +4,7 @@
 #--------------------
 
 #settings
-function gssen:settings
+execute unless data storage gssen:settings {PERSIST:true} run function gssen:settings
 
 #declare storage gssen:var
 #declare storage gssen:in

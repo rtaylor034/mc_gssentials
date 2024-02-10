@@ -1,15 +1,14 @@
 #>gssen:settings
 
 #declare storage gssen:settings
+data modify storage gssen:settings PERSIST set value false
 
-#> DEV - MAKE THIS DEFAULT TO DEPEND PLAYERS LOCATION FOR GARUNTEED SPAWN CHUNK
 #>-------------------
 # > free_block : {x: int, y: int, z: int}
-# default: {x:0, y:-63, z:0}
 #-------------------
-#~ a safe block location to do any sub-tick operations that require a block (ex: sign parsing).
+#~ a safe block location to do any sub-tick operations that require a block (ex: sign text evaluating).
 #-------------------
-#- this block is indefinitely replaced with bedrock.
+#- this block must be replaced with bedrock after every subtick operation.
 #- location must be forceloaded.
 #-------------------
 data modify storage gssen:settings free_block set value {x:0, y:-63, z:0}
