@@ -12,8 +12,6 @@
 # ...
 #--------------------
 
-$data modify storage gssen:in add set value $(in)
-
 data modify storage gssen:var add.ax set from storage gssen:in add.a[0]
 data modify storage gssen:var add.ay set from storage gssen:in add.a[1]
 data modify storage gssen:var add.az set from storage gssen:in add.a[2]
@@ -25,4 +23,4 @@ data modify storage gssen:var add.bz set from storage gssen:in add.b[2]
 function gssen:impl/vector/space/add/do with storage gssen:var add
 
 data remove storage gssen:var add
-data remove storage gssen:in in
+data remove storage gssen:in add

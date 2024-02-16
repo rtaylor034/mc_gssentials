@@ -14,8 +14,6 @@
 # ...
 #--------------------
 
-$data modify storage gssen:in to_rotation set value $(in)
-
 data modify storage gssen:var to_rotation.x set from storage gssen:in to_rotation.vector[0]
 data modify storage gssen:var to_rotation.y set from storage gssen:in to_rotation.vector[1]
 data modify storage gssen:var to_rotation.z set from storage gssen:in to_rotation.vector[2]

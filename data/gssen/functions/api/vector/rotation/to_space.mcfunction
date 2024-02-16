@@ -14,7 +14,6 @@
 # ...
 #--------------------
 
-$data modify storage gssen:in to_space set value $(in)
 execute unless data storage gssen:in to_space.magnitude run data modify storage gssen:in to_space.magnitude set value 1
 
 data modify storage gssen:var to_space.xrot set from storage gssen:in to_space.vector[0]

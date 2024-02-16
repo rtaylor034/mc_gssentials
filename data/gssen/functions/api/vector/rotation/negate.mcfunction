@@ -11,8 +11,6 @@
 # ...
 #--------------------
 
-$data modify storage gssen:in negate set value $(in)
-
 execute store result score *negate.yrot gssen_var run data get storage gssen:in negate.vector[1] 1000000
 scoreboard players operation *negate.yrot gssen_var *= *-1 gssen_const
 execute store result storage gssen:var negate.yrot float 0.000001 run scoreboard players get *negate.yrot gssen_var
