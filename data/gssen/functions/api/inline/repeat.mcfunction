@@ -19,7 +19,6 @@
 # 0.. - number of successful repititions. equal to <n> if all calls to <function> resulted in non-zero values.
 #--------------------
 
-$data modify storage gssen:in repeat set value $(in)
 execute unless data storage gssen:in repeat.iter_var run data modify storage gssen:in repeat.iter_var set value "i"
 execute unless data storage gssen:in repeat.with run data modify storage gssen:in repeat.with set value {null:1}
 

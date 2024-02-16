@@ -17,7 +17,6 @@
 # ...
 #--------------------
 
-$data modify storage gssen:in ensure set value $(in)
 data modify storage gssen:out ensure.result set value []
 data modify storage gssen:out ensure.compared set value []
 

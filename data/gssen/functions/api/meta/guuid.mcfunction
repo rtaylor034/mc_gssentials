@@ -14,7 +14,6 @@
 #--------------------
 
 data merge storage gssen:var {guuid:{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,a:0,b:0,c:0,d:0,e:0,f:0}}
-$data modify storage gssen:in guuid set value $(in)
 
 execute store result score *guuid.0 gssen_var store result score *guuid.1 gssen_var run data get storage gssen:in guuid.UUID[0]
 execute store result storage gssen:var guuid.0 int 1 run scoreboard players operation *guuid.0 gssen_var %= *256 gssen_const

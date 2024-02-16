@@ -5,9 +5,9 @@
 
 $data modify storage gssen:var difference.iter.a_item set from storage gssen:in difference.a[$(i)]
 
-data modify storage gssen:in partial.in.object set from storage gssen:var difference.iter.a_item
-data modify storage gssen:in partial.in.get set from storage gssen:in difference.compare
-function gssen:api/object/partial with storage gssen:in partial
+data modify storage gssen:in partial.object set from storage gssen:var difference.iter.a_item
+data modify storage gssen:in partial.get set from storage gssen:in difference.compare
+function gssen:api/object/partial
 
 execute store result score *difference.tags gssen_var run data get storage gssen:out partial.result
 execute if score *difference.tags gssen_var matches 0 run return 1
