@@ -2,7 +2,7 @@
 #--------------------
 # - gssen:api/object/partial
 #--------------------
-say o
+
 data modify storage gssen:out partial.result set from storage gssen:in partial.object
 data modify storage gssen:in repeat.in.function set value "gssen:impl/object/partial/without_iter"
 #data modify storage gssen:in repeat.in.with set value "my:storage path"
