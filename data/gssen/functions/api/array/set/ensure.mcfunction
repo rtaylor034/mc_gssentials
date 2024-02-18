@@ -22,7 +22,7 @@ data modify storage gssen:out ensure.compared set value []
 
 data modify storage gssen:var ensure.partial.in.get set from storage gssen:in ensure.compare
 
-execute if data storage amenu:in ensure.array[] run function gssen:impl/array/set/ensure/iter
+execute if data storage gssen:in ensure.array[] run function gssen:impl/array/set/ensure/iter
 data remove storage gssen:in ensure
 data remove storage gssen:var ensure
 scoreboard players reset *ensure.tags gssen_var
