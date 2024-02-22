@@ -1,4 +1,7 @@
 
+should be loaded BEFORE any pack that depends on it
+
+
 a pack should have 3 top-level function folders:
 - api
     - only methods that are exposed publicly.
