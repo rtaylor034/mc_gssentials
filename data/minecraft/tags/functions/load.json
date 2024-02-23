@@ -1,6 +1,5 @@
 {
-	"replace": false,
-	"values": [
-		"gssen:internal/load"
-	]
+    "values": [
+        "#load:_private/load"
+    ]
 }

@@ -3,6 +3,9 @@
 # @LOAD
 #--------------------
 
+# lantern
+scoreboard players set *gssen load.status 1
+
 #settings
 execute unless data storage gssen:settings {PERSIST:true} run function gssen:settings
 
@@ -12,7 +15,7 @@ execute unless data storage gssen:settings {PERSIST:true} run function gssen:set
 #declare storage gssen:const
 
 #scoreboards
-scoreboard objectives add gssen_var dummy
+scoreboard objectives add gssen-var dummy
 scoreboard objectives add gssen_const dummy
 
 #dirty (scores that may not be cleared)
