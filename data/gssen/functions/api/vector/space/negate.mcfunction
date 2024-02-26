@@ -12,16 +12,17 @@
 #--------------------
 
 data modify storage gssen:var _negate.out.vector set value [0d, 0d, 0d]
+data modify storage gssen:var _negate.in set from storage gssen:in negate
 
-data modify storage gssen:in negate.number set from storage gssen:in negate.vector[0]
+data modify storage gssen:in negate.number set from storage gssen:var _negate.in.vector[0]
 function gssen:api/decimal/negate
 data modify storage gssen:var _negate.out.vector[0] set from storage gssen:out negate.result
 
-data modify storage gssen:in negate.number set from storage gssen:in negate.vector[1]
+data modify storage gssen:in negate.number set from storage gssen:var _negate.in.vector[1]
 function gssen:api/decimal/negate
 data modify storage gssen:var _negate.out.vector[1] set from storage gssen:out negate.result
 
-data modify storage gssen:in negate.number set from storage gssen:in negate.vector[2]
+data modify storage gssen:in negate.number set from storage gssen:var _negate.in.vector[2]
 function gssen:api/decimal/negate
 data modify storage gssen:var _negate.out.vector[2] set from storage gssen:out negate.result
 
