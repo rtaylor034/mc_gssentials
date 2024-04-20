@@ -20,7 +20,7 @@ data modify storage gssen:var add.bx set from storage gssen:in add.b[0]
 data modify storage gssen:var add.by set from storage gssen:in add.b[1]
 data modify storage gssen:var add.bz set from storage gssen:in add.b[2]
 
-function gssen:impl/vector/space/add/do with storage gssen:var add
+function gssen:_/impl/vector/space/add/do with storage gssen:var add
 
 data remove storage gssen:var add
 data remove storage gssen:in add

@@ -18,4 +18,4 @@ data modify storage gssen:var to_rotation.x set from storage gssen:in to_rotatio
 data modify storage gssen:var to_rotation.y set from storage gssen:in to_rotation.vector[1]
 data modify storage gssen:var to_rotation.z set from storage gssen:in to_rotation.vector[2]
 
-execute positioned 0 0 0 align xyz summon marker run function gssen:impl/vector/space/to_rotation/do with storage gssen:var to_rotation
+execute positioned 0 0 0 align xyz summon marker run function gssen:_/impl/vector/space/to_rotation/do with storage gssen:var to_rotation

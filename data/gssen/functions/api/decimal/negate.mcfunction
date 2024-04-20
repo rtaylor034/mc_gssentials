@@ -11,6 +11,6 @@
 # ...
 #--------------------
 
-execute positioned 0 0 0 align xyz summon marker run function gssen:impl/decimal/negate/do with storage gssen:in negate
+execute positioned 0 0 0 align xyz summon marker run function gssen:_/impl/decimal/negate/do with storage gssen:in negate
 
 data remove storage gssen:in negate

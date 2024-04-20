@@ -16,7 +16,7 @@ scoreboard players operation *negate.yrot gssen_var *= *-1 gssen_const
 execute store result storage gssen:var negate.yrot float 0.000001 run scoreboard players get *negate.yrot gssen_var
 data modify storage gssen:var negate.xrot set from storage gssen:in negate.vector[0]
 
-execute summon marker run function gssen:impl/vector/rotation/negate/do with storage gssen:var negate
+execute summon marker run function gssen:_/impl/vector/rotation/negate/do with storage gssen:var negate
 
 data remove storage gssen:var negate
 data remove storage gssen:in negate

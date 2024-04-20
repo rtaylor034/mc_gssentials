@@ -15,7 +15,7 @@
 data modify storage gssen:var evaluate.text set from storage gssen:in evaluate.text
 data modify storage gssen:var evaluate merge from storage gssen:settings free_block
 
-function gssen:impl/text/evaluate/do with storage gssen:var evaluate
+function gssen:_/impl/text/evaluate/do with storage gssen:var evaluate
 
 data remove storage gssen:in evaluate
 data remove storage gssen:var evaluate

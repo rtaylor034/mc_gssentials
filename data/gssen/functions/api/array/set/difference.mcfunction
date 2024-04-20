@@ -20,7 +20,7 @@ data modify storage gssen:out difference.unique_a set value []
 data modify storage gssen:out difference.unique_b set value []
 scoreboard players set *difference gssen_return 0
 
-data merge storage gssen:in {repeat:{function:"gssen:impl/array/set/difference/iter", with:"gssen:in difference"}}
+data merge storage gssen:in {repeat:{function:"gssen:_/impl/array/set/difference/iter", with:"gssen:in difference"}}
 execute store result storage gssen:in repeat.n int 1 if data storage gssen:in difference.a[]
 function gssen:api/inline/repeat
 

@@ -25,7 +25,7 @@ data modify storage gssen:out intersection.shared_b set value []
 data modify storage gssen:out intersection.shared set value []
 scoreboard players set *intersection gssen_return 0
 
-data merge storage gssen:in {repeat:{function:"gssen:impl/array/set/intersection/iter", with: "gssen:in intersection"}}
+data merge storage gssen:in {repeat:{function:"gssen:_/impl/array/set/intersection/iter", with: "gssen:in intersection"}}
 execute store result storage gssen:in repeat.n int 1 if data storage gssen:in intersection.a[]
 function gssen:api/inline/repeat
 

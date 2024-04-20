@@ -11,4 +11,4 @@
 # ...
 #--------------------
 
-execute summon marker run function gssen:impl/inline/gen_uuid/gen
+execute summon marker run function gssen:_/impl/inline/gen_uuid/gen
