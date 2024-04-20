@@ -2,7 +2,7 @@
 should be loaded BEFORE any pack that depends on it
 
 
-a pack should have 2 top-level function folders:
+a pack should have 2-3 top-level function folders:
 - 'api'
     - only methods that are exposed publicly.
     - usually (but not always) has inputs and outputs.
@@ -10,6 +10,9 @@ a pack should have 2 top-level function folders:
 - '_'
     - contains all private functions.
     - other than 'load', structure is entirely defined by developer.
+- 'debug' (optional)
+    - public methods intended for debugging or administration purposes.
+    - methods in debug should only be ran manually in-game.
 
 function tags should have the structure specified below:
 'pack/tags/functions'
