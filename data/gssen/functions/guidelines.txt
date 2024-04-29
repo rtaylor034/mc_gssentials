@@ -1,14 +1,34 @@
 
-a pack should have 3 top-level function folders:
-- api
+should be loaded BEFORE any pack that depends on it
+
+
+a pack should have 2-3 top-level function folders:
+- 'api'
     - only methods that are exposed publicly.
     - usually (but not always) has inputs and outputs.
     - see below section about API standards/structure
-- impl
-    - strictly for functions that aid in the implementation of 'api' methods.
-- internal
-    - contains all non-api-implementation private functions.
-    - other than the required 'tick' and 'load' functions, structure is entirely defined by developer.
+- '_'
+    - contains all private functions.
+    - other than 'load', structure is entirely defined by developer.
+- 'debug' (optional)
+    - public methods intended for debugging or administration purposes.
+    - methods in debug should only be ran manually in-game.
+
+function tags should have the structure specified below:
+'pack/tags/functions'
+ - 'events/'
+    - the function tag equivalent of 'api'. should follow gvent standards.
+ - '_/'
+    - contains all private function tags.
+ - 'pre_load' || 'load' || post_load'
+    - these tags are special top level tags that are to be included in their respective lantern load functions.
+    - they exist for easy recognition and specification from other packs that may need to load the pack as a dependency.
+        - the pack can just include '#<pack>:load' in '#load:load' without having to worry about finding the load function.
+    - a pack is to ONLY include the load tag it needs,
+        example: gssen only has '#gssen:pre_load', not '#gssen:load' or '#gssen:post_load'.
+
+# Other Resources
+for all other resources that the pack provides (loot tables, tags, predicates, etc.) the top-level directory is to be used as the public directory with the exception of '_/' being the private subdirectory.
 
 # API structure
 

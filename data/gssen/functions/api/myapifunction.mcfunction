@@ -35,7 +35,7 @@
 # even if a section is blank, it MUST be included in the function header.
 
 # input data SHOULD be stored under '<namespace>:in <function>' (unless function has no inputs)
-$data modify storage gssen:in myapifunction set value $(in)
+#$data modify storage gssen:in myapifunction set value $(in)
 
 # ALL temporary data used by this function MUST be in form '<namespace>:var <function>.<data>'
 # (or '<namespace>:in' for inputs)

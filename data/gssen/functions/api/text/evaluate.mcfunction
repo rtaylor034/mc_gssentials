@@ -12,12 +12,10 @@
 #- single quotes may be required in in <text>.
 #--------------------
 
-$data modify storage gssen:in evaluate set value $(in)
-
 data modify storage gssen:var evaluate.text set from storage gssen:in evaluate.text
 data modify storage gssen:var evaluate merge from storage gssen:settings free_block
 
-function gssen:impl/text/evaluate/do with storage gssen:var evaluate
+function gssen:_/impl/text/evaluate/do with storage gssen:var evaluate
 
-#RESET
-data remove storage gssen:in parse
+data remove storage gssen:in evaluate
+data remove storage gssen:var evaluate

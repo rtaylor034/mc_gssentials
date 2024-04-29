@@ -10,11 +10,10 @@
 #--------------------
 # ...
 #--------------------
-# Yoinked from https://github.com/gibbsly/gu (modified for GStandards)
+# Idea and most implementation yoinked from https://github.com/gibbsly/gu (modified for GStandards)
 #--------------------
 
 data merge storage gssen:var {guuid:{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,a:0,b:0,c:0,d:0,e:0,f:0}}
-$data modify storage gssen:in guuid set value $(in)
 
 execute store result score *guuid.0 gssen_var store result score *guuid.1 gssen_var run data get storage gssen:in guuid.UUID[0]
 execute store result storage gssen:var guuid.0 int 1 run scoreboard players operation *guuid.0 gssen_var %= *256 gssen_const
@@ -48,8 +47,8 @@ execute store result score *guuid.3 gssen_var run scoreboard players operation *
 execute store result storage gssen:var guuid.e int 1 run scoreboard players operation *guuid.2 gssen_var %= *256 gssen_const
 execute store result storage gssen:var guuid.f int 1 run scoreboard players operation *guuid.3 gssen_var /= *256 gssen_const
 
-function gssen:impl/meta/guuid/get_hexes with storage gssen:var guuid
-function gssen:impl/meta/guuid/concat_uuid with storage gssen:var guuid
+function gssen:_/impl/meta/guuid/get_hexes with storage gssen:var guuid
+function gssen:_/impl/meta/guuid/concat_uuid with storage gssen:var guuid
 
 scoreboard players reset *guuid.0 gssen_var
 scoreboard players reset *guuid.1 gssen_var

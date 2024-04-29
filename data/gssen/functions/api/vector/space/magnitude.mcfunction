@@ -12,9 +12,7 @@
 #--------------------
 #~ implementation from "Triton365" on the Mincecraft Command Discord
 
-$data modify storage gssen:in magnitude set value $(in)
-
-function gssen:impl/vector/space/magnitude/convert
+function gssen:_/impl/vector/space/magnitude/convert
 
 #RESET
 data remove storage gssen:in magnitude

@@ -19,7 +19,6 @@
 # 0.. - number of successful repititions. equal to <n> if all calls to <function> resulted in non-zero values.
 #--------------------
 
-$data modify storage gssen:in repeat set value $(in)
 execute unless data storage gssen:in repeat.iter_var run data modify storage gssen:in repeat.iter_var set value "i"
 execute unless data storage gssen:in repeat.with run data modify storage gssen:in repeat.with set value {null:1}
 
@@ -27,11 +26,11 @@ scoreboard players add *repeat.nest_level gssen_var 1
 execute store result storage gssen:in repeat.scope int 1 run scoreboard players get *repeat.nest_level gssen_var
 
 execute store result score *repeat gssen_return run data get storage gssen:in repeat.n
-execute if score *repeat gssen_return matches 1.. run function gssen:impl/inline/repeat/init with storage gssen:in repeat
+execute if score *repeat gssen_return matches 1.. run function gssen:_/impl/inline/repeat/init with storage gssen:in repeat
 
 scoreboard players remove *repeat.nest_level gssen_var 1
 data remove storage gssen:var repeat.scopes[-1]
 #RESET
-execute if score *repeat.nest_level gssen_var matches ..0 run function gssen:impl/inline/repeat/reset
+execute if score *repeat.nest_level gssen_var matches ..0 run function gssen:_/impl/inline/repeat/reset
 
 return run scoreboard players get *repeat gssen_return

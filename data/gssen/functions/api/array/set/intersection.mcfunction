@@ -20,16 +20,14 @@
 # 1 - <a> and <b> have at least 1 intersection.
 #--------------------
 
-$data modify storage gssen:in intersection set value $(in)
 data modify storage gssen:out intersection.shared_a set value []
 data modify storage gssen:out intersection.shared_b set value []
 data modify storage gssen:out intersection.shared set value []
 scoreboard players set *intersection gssen_return 0
 
-execute store result storage gssen:in repeat.in.n int 1 if data storage gssen:in intersection.a[]
-data modify storage gssen:in repeat.in.function set value "gssen:impl/array/set/intersection/iter"
-data modify storage gssen:in repeat.in.with set value "gssen:in intersection"
-function gssen:api/inline/repeat with storage gssen:in repeat
+data merge storage gssen:in {repeat:{function:"gssen:_/impl/array/set/intersection/iter", with: "gssen:in intersection"}}
+execute store result storage gssen:in repeat.n int 1 if data storage gssen:in intersection.a[]
+function gssen:api/inline/repeat
 
 data remove storage gssen:in intersection
 data remove storage gssen:var intersection

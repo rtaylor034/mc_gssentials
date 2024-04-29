@@ -14,14 +14,13 @@
 # ...
 #--------------------
 
-$data modify storage gssen:in to_space set value $(in)
 execute unless data storage gssen:in to_space.magnitude run data modify storage gssen:in to_space.magnitude set value 1
 
 data modify storage gssen:var to_space.xrot set from storage gssen:in to_space.vector[0]
 data modify storage gssen:var to_space.yrot set from storage gssen:in to_space.vector[1]
 data modify storage gssen:var to_space.magnitude set from storage gssen:in to_space.magnitude
 
-execute positioned 0 0 0 align xyz summon marker run function gssen:impl/vector/rotation/to_space/do with storage gssen:var to_space
+execute positioned 0 0 0 align xyz summon marker run function gssen:_/impl/vector/rotation/to_space/do with storage gssen:var to_space
 
 data remove storage gssen:in to_space
 data remove storage gssen:var to_space

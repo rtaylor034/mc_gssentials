@@ -16,15 +16,13 @@
 # 1 - <a> and <b> have at least 1 difference.
 #--------------------
 
-$data modify storage gssen:in difference set value $(in)
 data modify storage gssen:out difference.unique_a set value []
 data modify storage gssen:out difference.unique_b set value []
 scoreboard players set *difference gssen_return 0
 
-execute store result storage gssen:in repeat.in.n int 1 if data storage gssen:in difference.a[]
-data modify storage gssen:in repeat.in.function set value "gssen:impl/array/set/difference/iter"
-data modify storage gssen:in repeat.in.with set value "gssen:in difference"
-function gssen:api/inline/repeat with storage gssen:in repeat
+data merge storage gssen:in {repeat:{function:"gssen:_/impl/array/set/difference/iter", with:"gssen:in difference"}}
+execute store result storage gssen:in repeat.n int 1 if data storage gssen:in difference.a[]
+function gssen:api/inline/repeat
 
 #{gssen:in -> difference.b} is affected by the above loop
 data modify storage gssen:out difference.unique_b set from storage gssen:in difference.b

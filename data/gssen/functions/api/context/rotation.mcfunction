@@ -11,4 +11,4 @@
 # ...
 #--------------------
 
-execute summon marker run function gssen:impl/context/rotation/do
+execute summon marker run function gssen:_/impl/context/rotation/do
