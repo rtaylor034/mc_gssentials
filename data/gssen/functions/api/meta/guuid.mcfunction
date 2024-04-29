@@ -10,7 +10,7 @@
 #--------------------
 # ...
 #--------------------
-# Yoinked from https://github.com/gibbsly/gu (modified for GStandards)
+# Idea and most implementation yoinked from https://github.com/gibbsly/gu (modified for GStandards)
 #--------------------
 
 data merge storage gssen:var {guuid:{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,a:0,b:0,c:0,d:0,e:0,f:0}}
