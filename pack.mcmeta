@@ -4,4 +4,4 @@
 		"supported_formats": {"min_inclusive": 16, "max_inclusive": 30},
 		"description": "A library pack with a bunch of helpful datapack-dev utilities. -GFunction"
 	}
-}\
+}
